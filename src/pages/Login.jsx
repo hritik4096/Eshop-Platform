@@ -20,7 +20,7 @@ const Login = () => {
       const data = await res.json();
       if (data.token) {
         localStorage.setItem('token', data.token);
-        window.location.href = '/home'; // force reload to ensure app reads token
+        navigate('/home');
       } else {
         setError('Invalid credentials');
       }
